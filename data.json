@@ -1,12 +1,11 @@
 {
     "targetPageUrl": [
-        "https://coloria.jp/",
-        "https://blog.withachristianwife.com/2018/03/04/posting-slack-with-shell-script-on-pi/",
-        "https://iwb.jp/puppeteer-multiple-webpage-404status-code-search/#response404",
-        "https://iwb.jp/puppeteer-multiple-webpage-404status-code-search/#response404/hoge"
+        "https://pptr.dev/next/",
+        "https://pptr.dev/next/hogeFuga",
+        "https://nodejs.org/ja/",
+        "https://developer.mozilla.org/ja/"
     ],
     "targetDevice": {
-        "sp": "iPhone 12",
-        "pc": false
+        "sp": "iPhone 12"
     }
 }

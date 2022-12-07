@@ -4,7 +4,7 @@ const jsonPath = './data.json';
 // 検索条件やURLをdata.jsonから取得する
 const data = JSON.parse(fs.readFileSync(jsonPath));
 // 使用するデバイスを取得
-const device = data.targetDevice.sp ? puppeteer.KnownDevices[data.targetDevice.sp] : puppeteer.KnownDevices[data.targetDevice.pc];
+const device = data.targetDevice.sp ? puppeteer.KnownDevices[data.targetDevice.sp] : false;
 // data.jsonカラ取得したURLのリスト
 const targetUrl = data.targetPageUrl;
 // 対象urlが指定されていなかったら処理を中止
@@ -23,8 +23,10 @@ if (noTargetUrl) {
     const context = await browser.createIncognitoBrowserContext();
     // 新規タブを開く
     const page = await context.newPage();
-    // 開くデバイスを指定
-    await page.emulate(device);
+    if (device) {
+        // 開くデバイスを指定
+        await page.emulate(device);
+    }
 
     try {
         const notFound = [];
