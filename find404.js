@@ -19,6 +19,7 @@ if (noTargetUrl) {
     const browser = await puppeteer.launch({
         headless: false,
         timeout: 10000,
+        ignoreDefaultArgs: ['--disable-extensions'],
     });
     const context = await browser.createIncognitoBrowserContext();
     // 新規タブを開く
